@@ -400,9 +400,7 @@
               $("#submit").on("click", function () {
 					const email = $("#submit-email").val();
 					const advice = $("#submit-advice").val();
-                    //추가함 밑에 두줄
-                    $.busyLoadFull("show");
-                    $.fn.simplePopup({ type: "html", htmlSelector: "#popup" });
+                    
 		    
 					function validateEmail(email) {
 					    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -413,6 +411,10 @@
 					    alert("이메일이 유효하지 않아 알림을 드릴 수가 없습니다. ");
 					    return;
 					}
+
+                    //추가함 밑에 두줄
+                    $.busyLoadFull("show");
+                    $.fn.simplePopup({ type: "html", htmlSelector: "#popup" });
 		    
 					var finalData = JSON.stringify({
 					    "id": getUVfromCookie(),
